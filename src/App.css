@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.menu-draggable {
+  -webkit-app-region: drag;
+}
+
+.menu-undraggable {
+  -webkit-app-region: no-drag;
+}
+
+.menu-app-button {
+  cursor: context-menu !important;
+}
+
+.control-app-button {
+  cursor: context-menu !important;
+}
+
+.control-app-button:hover {
+  background: #616161 !important;
+  border-radius: unset !important;
+}
+
+.close-app-button {
+  cursor: context-menu !important;
+}
+
+.close-app-button:hover {
+  background: #d50000 !important;
+  border-radius: unset !important;
+}

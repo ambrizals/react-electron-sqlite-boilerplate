@@ -1,0 +1,84 @@
+{
+  "name": "react-electron-sqlite-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/electron.js",
+  "author": {
+    "name": "Ambrizal Suryadinata",
+    "email": "sabuncolek@ambrizal.net",
+    "url": "https://ambrizal.net"
+  },
+  "description": "Boilerplate for Electron with SQLite3 and React JS",
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "babel-loader": "^8.1.0",
+    "electron-is-dev": "^1.2.0",
+    "fs": "^0.0.1-security",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-logic": "^3.0.2",
+    "redux-persist": "^6.0.0",
+    "sqlite3": "^5.0.0"
+  },
+  "scripts": {
+    "start": "cross-env BROWSER=none react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "staging": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "electron:dev": "nodemon --watch public/electron.js --watch database/**/* --exec electron .",
+    "electron:build": "electron-builder",
+    "electron:generate-icons": "electron-icon-builder --input=./public/logo.png --output=build --flatten"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "electron": "^10.0.0",
+    "electron-builder": "^22.8.0",
+    "electron-devtools-installer": "^3.1.1",
+    "electron-icon-builder": "^1.0.2",
+    "laravel-mix": "^5.0.5",
+    "nodemon": "^2.0.4",
+    "react-scripts": "3.4.3",
+    "webpack": "4.42.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "build": {
+    "productName": "Electron Apps",
+    "appId": "yourid.apps",
+    "win": {
+      "asar": true,
+      "target": "nsis",
+      "icon": "build/icons/icon.ico"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "database/**/*",
+      "renderer/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
